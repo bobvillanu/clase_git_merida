@@ -1,0 +1,25 @@
+#importando los esquemas al esquema principal
+# import Post from "./schema/customers.graphql"
+# import Post from "./schema/address.graphql"
+# import Post from "./schema/products.graphql"
+# import Post from "./schema/providers.graphql"
+
+type Query{
+	listCustomers:[Customer]!
+	listAddress:[Address]!
+	listProducts:[Product!]
+	listProviders:[Provider!]
+}
+
+type Mutation{
+	login(email:String!,password:String):Auth!
+	createCustomers(data:createCustomerInput!):Customer!
+	createAddress(data:createAddressinput!):Address!
+	createProducts(data:createProductsInput!):Product
+	createProviders(data:createProvidersInput!):Provider
+}
+
+type Auth{
+	token:String!
+	message:String!
+}
