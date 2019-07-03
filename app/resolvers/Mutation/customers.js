@@ -2,7 +2,7 @@ const CustomersModel=require('/devf/backend_project/app/models/Customers');
 const authenticate= require('/devf/backend_project/app/utils/authenticate');
 
 const createCustomers= async(root,params,context,info)=>{
-	console.log(params.data);
+	console.log('hola');
 	const newCustomer= await CustomersModel.create(params.data)
 								.catch(e=>{throw new Error(e.message)})
 									  
