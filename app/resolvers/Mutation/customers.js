@@ -20,7 +20,6 @@ const createCustomers= async(root,params,context,info)=>{
 	
 	return newCustomer.toObject();
 }
-
 const updateCustomers= async(root,params,context,info)=>{
 	const {data} = params 
 	const {user}=context
@@ -43,18 +42,18 @@ const updateCustomers= async(root,params,context,info)=>{
 }
 const deleteCustomers= async(root,params,context,info)=>{
 	const {user}=context
-	console.log(params.data);
+	//console.log(params.data);
 	//valida que el cliente exista
 	const Customers=await CustomersModel.findById(user._id);
 	if(!Customers) throw new Error("cliente no existe")
 	//baja logica del cliente
 	Customers.is_active=false;
-	const deleteAuthor=await Customers.save({new:true})
-	return "Usuario eliminado"
+	const deleteCustomers=await Customers.save({new:true})
+	return "Cliente eliminado"
 }
-
 const login= async(root,params,context,info)=>{
 	//valida autentificacion
+	//console.log(params);
 	const token= await authenticate(params).catch(e=>{throw e})
 	return{
 		token,

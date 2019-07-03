@@ -1,4 +1,4 @@
-const CustomersModel=require('../../models/Products');
+const ProductsModel=require('../../models/Products');
 
 const createProducts= async(root,params,context,info)=>{
 	
