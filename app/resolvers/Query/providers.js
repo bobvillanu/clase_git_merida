@@ -1,4 +1,4 @@
-const CustomersModel=require('/devf/backend_project/app/models/Providers');
+const CustomersModel=require('../../models/Providers');
 
 const listProviders=async(root,params,context,info)=>{
 	const provider= await ProvidersModel.find({});

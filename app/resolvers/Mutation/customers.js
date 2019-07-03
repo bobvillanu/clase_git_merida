@@ -1,5 +1,5 @@
-const CustomersModel=require('/devf/backend_project/app/models/Customers');
-const authenticate= require('/devf/backend_project/app/utils/authenticate');
+const CustomersModel=require('../../models/Customers');
+const authenticate= require('../../utils/authenticate');
 
 const createCustomers= async(root,params,context,info)=>{
 	console.log('hola');
