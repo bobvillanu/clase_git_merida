@@ -3,7 +3,7 @@ const MutationAddress=require('./address');
 const MutationProducts=require('./products');
 const MutationProviders=require('./providers');
 
-console.log(MutationCustomers);
+//console.log(MutationCustomers);
 
 module.exports={
     ...MutationCustomers,

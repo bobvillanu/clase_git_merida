@@ -1,3 +1,5 @@
+directive @auth on FIELD_DEFINITION | FIELD
+
 #importando los esquemas al esquema principal
 # import Post from "./schema/customers.graphql"
 # import Post from "./schema/address.graphql"
@@ -5,7 +7,8 @@
 # import Post from "./schema/providers.graphql"
 
 type Query{
-	listCustomers:[Customer]!
+	listCustomers:[Customer]! @auth
+	singleCustomer(id:ID!):Customer!
 	listAddress:[Address]!
 	listProducts:[Product!]
 	listProviders:[Provider!]
@@ -14,6 +17,8 @@ type Query{
 type Mutation{
 	login(email:String!,password:String):Auth!
 	createCustomers(data:createCustomerInput!):Customer!
+	updateCustomers(id:ID!,data:updateCustomerInput!):Customer! @auth
+	deleteCustomers:String! @auth
 	createAddress(data:createAddressinput!):Address!
 	createProducts(data:createProductsInput!):Product
 	createProviders(data:createProvidersInput!):Provider
