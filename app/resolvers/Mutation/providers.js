@@ -1,4 +1,4 @@
-const CustomersModel=require('/devf/backend_project/app/models/Providers');
+const CustomersModel=require('../../models/Providers');
 
 const createProviders= async(root,params,context,info)=>{
 	

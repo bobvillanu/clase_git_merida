@@ -1,4 +1,4 @@
-const CustomersModel=require('/devf/backend_project/app/models/Address');
+const CustomersModel=require('../../models/Address');
 
 const createAddress= async(root,params,context,info)=>{
 	
